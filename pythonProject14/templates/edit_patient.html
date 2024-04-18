@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редактирование данных пациента</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Редактирование данных пациента</h1>
+        <form action="/edit_patient/{{ patient_id }}" method="post">
+            <input type="hidden" name="type" value="patient">
+            <input type="text" id="date_of_birth" name="date_of_birth" placeholder="Дата рождения (в формате dd.mm.yyyy)" value="{% if patient %}{{ patient.get('date_of_birth', '') }}{% endif %}" required>
+            <input type="submit" value="Сохранить" class="button">
+        </form>
+        <p><a href="{{ url_for('doctor_dashboard', doctor_id=doctor_id) }}" class="button">Вернуться в дэшборд</a></p>
+    </div>
+</body>
+</html>

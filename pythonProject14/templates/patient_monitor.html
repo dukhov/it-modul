@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мониторинг состояния пациента</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Мониторинг состояния пациента</h1>
+        <h2>Patient ID: {{ patient_id }}</h2>
+
+        <div class="vitals">
+            <div class="temperature">
+                <h3>Температура тела</h3>
+                {{ temperature_graph | safe }}
+                {% if avg_temperature is not none %}
+                    <p>Средняя температура тела: {{ avg_temperature }}</p>
+                {% endif %}
+            </div>
+
+            <div class="heart-rate">
+                <h3>Частота сердечных сокращений</h3>
+                {{ heart_rate_graph | safe }}
+                {% if avg_heart_rate is not none %}
+                    <p>Средняя частота сердечных сокращений: {{ avg_heart_rate }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

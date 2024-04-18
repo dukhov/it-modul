@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация успешна</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Регистрация успешна!</h1>
+        <p>Логин: {{ patient['_id'] }}</p>
+        <p>Пароль: {{ patient['password'] }}</p>
+        <a href="{{ url_for('doctor_dashboard', doctor_id=patient.doctor_id) }}" class="button">Вернуться в дэшборд</a>
+    </div>
+</body>
+</html>

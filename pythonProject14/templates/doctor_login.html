@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход для врача</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Вход для врача</h1>
+        <form action="/login" method="post">
+            <input type="hidden" name="type" value="doctor">
+            <input type="text" name="user_id" placeholder="ID врача" required>
+            <input type="password" name="user_password" placeholder="Пароль" required>
+            <input type="submit" value="Войти" class="button">
+        </form>
+        <p>Нет аккаунта? <a href="/register_doctor" class="link">Зарегистрироваться</a></p>
+    </div>
+</body>
+</html>

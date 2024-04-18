@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация пациента</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Регистрация пациента</h1>
+        <form action="/register_patient" method="post">
+            <input type="text" id="doctor_id" name="doctor_id" placeholder="ID врача" required>
+            <input type="text" id="patient_name" name="patient_name" placeholder="Имя пациента" required>
+            <input type="password" id="patient_password" name="patient_password" placeholder="Пароль" required>
+            <input type="text" id="date_of_birth" name="date_of_birth" placeholder="Дата рождения (в формате dd.mm.yyyy):" required><br>
+            <input type="submit" value="Зарегистрировать">
+        </form>
+    </div>
+</body>
+</html>
